@@ -1,10 +1,9 @@
-// اكتشف السعودية جامعة الملك سعود - JavaScript أمامي بسيط
-// هذه النسخة تستخدم localStorage فقط للعرض التجريبي.
 
-const STORAGE_KEY = "discover_saudi_items_ksu_balanced";
-const ADMIN_KEY = "discover_saudi_admin_ksu_balanced";
-const MESSAGE_KEY = "discover_saudi_message_ksu_balanced";
-const THEME_KEY = "discover_saudi_theme_ksu_balanced";
+
+const STORAGE_KEY = "discover_saudi_items_real_photos_v1";
+const ADMIN_KEY = "discover_saudi_admin_real_photos_v1";
+const MESSAGE_KEY = "discover_saudi_message_real_photos_v1";
+const THEME_KEY = "discover_saudi_theme_real_photos_v1";
 
 const defaultItems = [
   {
@@ -12,7 +11,7 @@ const defaultItems = [
     name: "الرياض",
     region: "منطقة الرياض",
     category: "مدينة",
-    image: "assets/riyadh.svg",
+    image: "assets/riyadh.jpg",
     short: "عاصمة المملكة ومركز مهم للتاريخ والاقتصاد.",
     description:
       "الرياض هي عاصمة المملكة العربية السعودية، وتجمع بين المباني الحديثة والأماكن التاريخية. من أشهر معالمها برج المملكة والمتحف الوطني وحي الطريف في الدرعية.",
@@ -23,7 +22,7 @@ const defaultItems = [
     name: "مكة المكرمة",
     region: "منطقة مكة المكرمة",
     category: "تاريخية",
-    image: "assets/makkah.svg",
+    image: "assets/makkah.jpg",
     short: "مدينة مقدسة ومقصد المسلمين من جميع أنحاء العالم.",
     description:
       "مكة المكرمة لها مكانة دينية عظيمة، وفيها المسجد الحرام والكعبة المشرفة. يزورها ملايين المسلمين سنوياً لأداء الحج والعمرة.",
@@ -34,7 +33,7 @@ const defaultItems = [
     name: "جدة",
     region: "منطقة مكة المكرمة",
     category: "ساحلية",
-    image: "assets/jeddah.svg",
+    image: "assets/jeddah.jpg",
     short: "مدينة ساحلية جميلة على البحر الأحمر.",
     description:
       "جدة مدينة ساحلية معروفة بالكورنيش والواجهة البحرية، كما أن منطقة جدة التاريخية تضم بيوتاً قديمة وأسواقاً شعبية جميلة.",
@@ -45,7 +44,7 @@ const defaultItems = [
     name: "العلا",
     region: "منطقة المدينة المنورة",
     category: "تاريخية",
-    image: "assets/alula.svg",
+    image: "assets/alula.jpg",
     short: "منطقة تاريخية تشتهر بالصخور والمعالم الأثرية.",
     description:
       "العلا من أهم الوجهات التاريخية في المملكة، وتشتهر بمدائن صالح والتكوينات الصخرية والطبيعة الصحراوية المميزة.",
@@ -56,7 +55,7 @@ const defaultItems = [
     name: "أبها",
     region: "منطقة عسير",
     category: "جبلية",
-    image: "assets/abha.svg",
+    image: "assets/abha.jpg",
     short: "مدينة جبلية تشتهر بالأجواء المعتدلة والطبيعة الخضراء.",
     description:
       "تقع أبها في جنوب المملكة، وتتميز بالمرتفعات الجبلية والطقس الجميل. تعد من الوجهات السياحية المناسبة لمحبي الطبيعة.",
@@ -67,7 +66,7 @@ const defaultItems = [
     name: "الطائف",
     region: "منطقة مكة المكرمة",
     category: "جبلية",
-    image: "assets/taif.svg",
+    image: "assets/taif.jpg",
     short: "مدينة معروفة بالورد والجبال والأجواء اللطيفة.",
     description:
       "الطائف مدينة جبلية تشتهر بمزارع الورد، وتعد من المدن السياحية المهمة بسبب مناخها ومواقعها الطبيعية.",
@@ -167,7 +166,7 @@ function cardTemplate(item) {
   return `
     <a class="place-card" href="details.html?id=${encodeURIComponent(item.id)}">
       <div class="card-image">
-        <img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.name)}" />
+        <img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.name)}" loading="lazy" />
         <span class="badge">${escapeHTML(item.category)}</span>
       </div>
       <div class="card-body">

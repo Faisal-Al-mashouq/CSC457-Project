@@ -1,13 +1,11 @@
+اكتشف السعودية
 
-How to run:
-1. Open the frontend folder.
-2. Double-click index.html, or use VS Code Live Server.
+واجهة أمامية بسيطة لموقع عربي يعرض مناطق ومعالم من المملكة العربية السعودية.
 
-Admin demo login:
+طريقة التشغيل:
+1. افتح ملف index.html مباشرة في المتصفح.
+2. أو استخدم إضافة Live Server في VS Code.
+
+بيانات دخول المشرف:
 Username: admin
 Password: 12345
-
-Notes:
-- This version uses HTML, CSS, and JavaScript only.
-- Data is stored in localStorage for frontend testing.
-- connect the pages to PHP, database, and sessions.
