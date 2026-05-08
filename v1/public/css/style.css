@@ -409,8 +409,18 @@ body.dark .admin-simple-inner td,
 body.dark .admin-simple-inner th {
   border-color: var(--border);
 }
+body.dark .nav-links a:hover,
+body.dark .nav-links a.active,
+body.dark .theme-btn:hover,
+body.dark .feature-list h3,
+body.dark .info-line span,
+body.dark .badge {
+  color: #dff7e8;
+}
+body.dark .card-image .badge {
+  color: var(--green-dark);
+}
 
-/* Admin (login, logout, dashboard, add, edit, delete) */
 .admin-simple { min-height: 100vh; padding: 28px 16px 48px; }
 .admin-simple-inner {
   max-width: 480px;
