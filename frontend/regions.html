@@ -1,80 +1,61 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+  <title>اكتشف السعودية جامعة الملك سعود - المناطق</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>معرض المناطق | Discover Saudi Arabia</title>
   <link rel="stylesheet" href="css/style.css" />
+  <script src="js/app.js" defer></script>
 </head>
-<body data-page="regions">
+<body>
   <header class="site-header">
-    <nav class="navbar container" aria-label="القائمة الرئيسية">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">د</span>
-        <span>
-          <strong>Discover Saudi Arabia</strong>
-          <small>اكتشف السعودية</small>
-        </span>
-      </a>
-
-      <button class="menu-toggle" type="button" aria-label="فتح القائمة">☰</button>
-
+    <nav class="nav container">
+      <a class="logo" href="index.html"><span class="logo-mark">س</span>اكتشف السعودية جامعة الملك سعود</a>
       <div class="nav-links">
         <a href="index.html">الرئيسية</a>
-        <a class="active" href="regions.html">معرض المناطق</a>
-        <a href="details.html">صفحة التفاصيل</a>
+        <a href="regions.html">المناطق</a>
         <a href="admin-login.html">دخول المشرف</a>
-        <button class="theme-toggle" type="button">الوضع الليلي</button>
+        <button id="themeToggle" class="theme-btn" type="button">الوضع الليلي</button>
       </div>
     </nav>
   </header>
 
-  <main>
-    <section class="page-hero gallery-hero">
-      <div class="container">
-        <span class="eyebrow">معرض المناطق</span>
-        <h1>اختر وجهتك من لوحة السفر الثقافية</h1>
-        <p>استخدم البحث أو التصنيف لعرض المناطق حسب الطابع الثقافي أو الطبيعي أو التاريخي.</p>
-      </div>
+  <main class="container section">
+    <section class="page-hero compact-hero">
+      <span class="eyebrow">معرض المناطق</span>
+      <h1>اختر منطقة أو ابحث عن وجهة</h1>
+      <p>استخدم البحث أو التصنيف، ثم اضغط على البطاقة لعرض التفاصيل.</p>
     </section>
 
-    <section class="container explorer-panel reveal">
-      <div class="filter-toolbar">
-        <label class="search-box">
-          <span>بحث</span>
-          <input id="searchInput" type="search" placeholder="اكتب اسم المنطقة أو المعلم..." />
-        </label>
-
-        <div class="filter-group" aria-label="تصفية المناطق">
-          <button class="filter-pill active" type="button" data-filter="all">الكل</button>
-          <button class="filter-pill" type="button" data-filter="تاريخ">تاريخ</button>
-          <button class="filter-pill" type="button" data-filter="طبيعة">طبيعة</button>
-          <button class="filter-pill" type="button" data-filter="ثقافة">ثقافة</button>
-          <button class="filter-pill" type="button" data-filter="ساحل">ساحل</button>
-        </div>
+    <section class="filter-panel" aria-label="خيارات البحث والتصفية">
+      <div class="field-group search-field">
+        <label for="searchInput">البحث</label>
+        <input id="searchInput" type="text" placeholder="مثال: الرياض، جدة، العلا" />
       </div>
 
-      <div class="gallery-summary">
-        <strong id="regionCount">0</strong>
-        <span>نتائج معروضة من قاعدة البيانات المحلية التجريبية</span>
+      <div class="field-group">
+        <label for="categoryFilter">التصنيف</label>
+        <select id="categoryFilter">
+          <option value="all">كل التصنيفات</option>
+          <option value="مدينة">مدينة</option>
+          <option value="تاريخية">تاريخية</option>
+          <option value="ساحلية">ساحلية</option>
+          <option value="جبلية">جبلية</option>
+        </select>
       </div>
 
-      <div id="regionsGrid" class="regions-grid" aria-live="polite"></div>
-      <div id="emptyState" class="empty-state hidden">
-        <img src="assets/empty.svg" alt="" />
-        <h2>لا توجد نتائج مطابقة</h2>
-        <p>جرّب كلمة بحث مختلفة أو اختر تصنيفاً آخر.</p>
-      </div>
+      <button id="resetFilters" class="btn btn-secondary" type="button">إعادة ضبط</button>
+      <p id="resultCount" class="result-count">عدد النتائج: 0</p>
     </section>
+
+    <section id="regionsGrid" class="cards-grid regions-grid"></section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© 2026 Discover Saudi Arabia – Interactive Cultural Website</p>
-      <a href="admin-login.html">منطقة المشرف</a>
+      <p>اكتشف السعودية جامعة الملك سعود</p>
+      <p>موقع تعريفي بسيط عن مناطق المملكة</p>
     </div>
   </footer>
-
-  <script src="js/app.js"></script>
 </body>
 </html>

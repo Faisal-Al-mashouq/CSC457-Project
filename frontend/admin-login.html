@@ -1,54 +1,49 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+  <title>اكتشف السعودية جامعة الملك سعود - دخول المشرف</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>دخول المشرف | Discover Saudi Arabia</title>
   <link rel="stylesheet" href="css/style.css" />
+  <script src="js/app.js" defer></script>
 </head>
-<body data-page="login" class="admin-body">
-  <main class="admin-login-screen">
-    <section class="login-art">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">د</span>
-        <span>
-          <strong>Discover Saudi Arabia</strong>
-          <small>اكتشف السعودية</small>
-        </span>
-      </a>
-      <h1>بوابة إدارة المحتوى الثقافي</h1>
-      <p>تسجيل دخول المشرف لإضافة وتحديث وحذف بيانات المناطق والمعالم.</p>
-      <div class="login-note">
-        <strong>بيانات التجربة</strong>
-        <span>اسم المستخدم: admin</span>
-        <span>كلمة المرور: 12345</span>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="logo" href="index.html"><span class="logo-mark">س</span>اكتشف السعودية جامعة الملك سعود</a>
+      <div class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="regions.html">المناطق</a>
+        <a href="admin-login.html">دخول المشرف</a>
+        <button id="themeToggle" class="theme-btn" type="button">الوضع الليلي</button>
       </div>
-    </section>
+    </nav>
+  </header>
 
-    <section class="login-panel">
-      <form id="loginForm" class="form-card" novalidate>
-        <span class="eyebrow">منطقة المشرف</span>
-        <h2>تسجيل الدخول</h2>
-        <div id="loginMessage" class="message error hidden"></div>
+  <main class="container login-page">
+    <section class="form-card login-card">
+      <span class="section-label">منطقة المشرف</span>
+      <h1>تسجيل الدخول</h1>
+      <p class="hint">بيانات التجربة: <strong>admin</strong> / <strong>12345</strong></p>
 
-        <label>
-          اسم المستخدم
-          <input id="username" name="username" type="text" placeholder="ادخل اسم المستخدم" autocomplete="username" />
-          <small class="field-error"></small>
-        </label>
+      <form id="loginForm" novalidate>
+        <label for="username">اسم المستخدم</label>
+        <input id="username" type="text" placeholder="اكتب اسم المستخدم" />
 
-        <label>
-          كلمة المرور
-          <input id="password" name="password" type="password" placeholder="ادخل كلمة المرور" autocomplete="current-password" />
-          <small class="field-error"></small>
-        </label>
+        <label for="password">كلمة المرور</label>
+        <input id="password" type="password" placeholder="اكتب كلمة المرور" />
 
-        <button class="btn primary full" type="submit">دخول</button>
-        <a class="text-link" href="index.html">العودة إلى الموقع</a>
+        <p id="loginError" class="error-message"></p>
+        <button class="btn btn-primary full" type="submit">دخول</button>
       </form>
     </section>
   </main>
 
-  <script src="js/app.js"></script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>اكتشف السعودية جامعة الملك سعود</p>
+      <p>موقع تعريفي بسيط عن مناطق المملكة</p>
+    </div>
+  </footer>
 </body>
 </html>

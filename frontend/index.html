@@ -1,139 +1,112 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+  <title>اكتشف السعودية جامعة الملك سعود - الرئيسية</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Discover Saudi Arabia – Interactive Cultural Website</title>
   <link rel="stylesheet" href="css/style.css" />
+  <script src="js/app.js" defer></script>
 </head>
-<body data-page="home">
+<body>
   <header class="site-header">
-    <nav class="navbar container" aria-label="القائمة الرئيسية">
-      <a class="brand" href="index.html" aria-label="Discover Saudi Arabia">
-        <span class="brand-mark">د</span>
-        <span>
-          <strong>Discover Saudi Arabia</strong>
-          <small>اكتشف السعودية</small>
-        </span>
-      </a>
-
-      <button class="menu-toggle" type="button" aria-label="فتح القائمة">☰</button>
-
+    <nav class="nav container">
+      <a class="logo" href="index.html"><span class="logo-mark">س</span>اكتشف السعودية جامعة الملك سعود</a>
       <div class="nav-links">
-        <a class="active" href="index.html">الرئيسية</a>
-        <a href="regions.html">معرض المناطق</a>
-        <a href="details.html">صفحة التفاصيل</a>
+        <a href="index.html">الرئيسية</a>
+        <a href="regions.html">المناطق</a>
         <a href="admin-login.html">دخول المشرف</a>
-        <button class="theme-toggle" type="button" aria-label="تبديل الوضع الليلي">الوضع الليلي</button>
+        <button id="themeToggle" class="theme-btn" type="button">الوضع الليلي</button>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero-orbit">
+    <section class="hero-section">
       <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <span class="eyebrow">مشروع تفاعلي ثقافي</span>
-          <h1>رحلة رقمية لاكتشاف مناطق المملكة وثقافتها</h1>
-          <p>
-            موقع <strong>Discover Saudi Arabia</strong> يقدم تجربة عربية تفاعلية تعرض المناطق السعودية
-            كأنها محطات في جواز سفر ثقافي، مع معلومات تاريخية، معالم بارزة، وصور تعريفية.
+        <div class="hero-content">
+          <span class="eyebrow">اكتشف السعودية جامعة الملك سعود</span>
+          <h1>رحلة بسيطة للتعرف على مناطق ومعالم المملكة</h1>
+          <p class="lead">
+            موقع عربي يعرض لمحة عن مدن ومناطق سعودية بطريقة سهلة، مع بحث وفلترة
+            ووضع ليلي ولوحة مشرف تجريبية لإدارة المحتوى.
           </p>
+
           <div class="hero-actions">
-            <a class="btn primary" href="regions.html">ابدأ الاستكشاف</a>
-            <a class="btn ghost" href="details.html">شاهد نموذج التفاصيل</a>
+            <a class="btn btn-primary" href="regions.html">استكشاف المناطق</a>
+            <button id="randomPlaceBtn" class="btn btn-secondary" type="button">اقترح لي وجهة</button>
           </div>
+
+          <div id="randomPlaceBox" class="suggestion-card" hidden></div>
         </div>
 
-        <div class="passport-card reveal" aria-label="بطاقة تعريفية عن الموقع">
-          <div class="passport-top">
-            <span>جواز ثقافي</span>
-            <span class="stamp">KSA</span>
-          </div>
-          <img src="assets/hero.svg" alt="رسم فني يرمز إلى مناطق المملكة" />
-          <div class="passport-bottom">
-            <strong>اكتشف، قارن، واحفظ انطباعك</strong>
-            <p>تصميم مختلف يعتمد على بطاقات سفر وخريطة بصرية بدلاً من layout تقليدي.</p>
-          </div>
+        <div class="hero-visual" aria-label="صور من السعودية">
+          <img class="main-visual" src="assets/hero.svg" alt="رسم بسيط لمعالم السعودية" />
+          <div class="floating-note note-one">بحث سريع</div>
+          <div class="floating-note note-two">معلومات مختصرة</div>
         </div>
       </div>
     </section>
 
-    <section class="container mission-section">
-      <article class="mission-card reveal">
-        <span class="number">01</span>
-        <h2>فكرة الموقع</h2>
-        <p>
-          تعريف الزائر بالمملكة العربية السعودية من خلال محتوى منظم عن المناطق، الثقافة،
-          المعالم التاريخية، والوجهات المهمة بأسلوب بسيط وسهل التصفح.
-        </p>
-      </article>
-
-      <article class="mission-card reveal">
-        <span class="number">02</span>
-        <h2>طريقة التفاعل</h2>
-        <p>
-          يمكن للزائر استخدام البحث والتصنيف في معرض المناطق، ثم فتح صفحة تفاصيل ديناميكية
-          لكل منطقة أو معلم لمشاهدة المعلومات والصور.
-        </p>
-      </article>
-
-      <article class="mission-card reveal">
-        <span class="number">03</span>
-        <h2>لوحة المشرف</h2>
-        <p>
-          تتضمن الصفحات الإدارية تسجيل دخول، لوحة تحكم، إضافة محتوى، تحديث محتوى، وحذف
-          مع رسالة تأكيد ونتيجة واضحة بعد نجاح العملية.
-        </p>
-      </article>
+    <section class="container section stats-row" aria-label="ملخص الموقع">
+      <div class="stat-card">
+        <strong id="placesCount">6</strong>
+        <span>وجهات</span>
+      </div>
+      <div class="stat-card">
+        <strong>4</strong>
+        <span>تصنيفات</span>
+      </div>
+      <div class="stat-card">
+        <strong>CRUD</strong>
+        <span>لوحة مشرف</span>
+      </div>
     </section>
 
-    <section class="container cultural-compass reveal">
+    <section class="container section split-section">
+      <div>
+        <span class="section-label">فكرة الموقع</span>
+        <h2>تصميم واضح ومناسب لعمل جامعي</h2>
+        <p>
+          ركزت الصفحة على البساطة: ألوان هادئة، بطاقات مرتبة، أزرار واضحة،
+          وتفاعل خفيف بدون تعقيد زائد.
+        </p>
+      </div>
+      <div class="feature-list">
+        <article>
+          <span>01</span>
+          <h3>معرض مناطق</h3>
+          <p>بطاقات مرتبة لكل منطقة مع صورة ووصف قصير.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>بحث وفلترة</h3>
+          <p>المستخدم يستطيع البحث حسب الاسم أو اختيار التصنيف.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>إدارة المحتوى</h3>
+          <p>صفحات بسيطة للإضافة والتعديل والحذف كتجربة أمامية.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section">
       <div class="section-heading">
-        <span class="eyebrow">بوصلة ثقافية</span>
-        <h2>ماذا يمكن أن يستكشف الزائر؟</h2>
+        <div>
+          <span class="section-label">ابدأ من هنا</span>
+          <h2>وجهات مقترحة</h2>
+        </div>
+        <a class="simple-link" href="regions.html">عرض كل المناطق ←</a>
       </div>
-
-      <div class="compass-grid">
-        <div class="compass-item">
-          <span>🏛️</span>
-          <h3>تاريخ</h3>
-          <p>قصص المدن والمواقع التاريخية.</p>
-        </div>
-        <div class="compass-item">
-          <span>🌄</span>
-          <h3>طبيعة</h3>
-          <p>جبال، سواحل، وواحات متنوعة.</p>
-        </div>
-        <div class="compass-item">
-          <span>☕</span>
-          <h3>ثقافة</h3>
-          <p>ضيافة، أسواق، وفنون محلية.</p>
-        </div>
-        <div class="compass-item">
-          <span>🧭</span>
-          <h3>مسارات</h3>
-          <p>اقتراحات مبسطة لرحلة معرفية.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="container spotlight-section reveal">
-      <div class="section-heading">
-        <span class="eyebrow">محطات مختارة</span>
-        <h2>نماذج من محتوى المعرض</h2>
-      </div>
-      <div id="homeSpotlight" class="spotlight-grid"></div>
+      <div id="featuredGrid" class="cards-grid small-grid"></div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© 2026 Discover Saudi Arabia – Interactive Cultural Website</p>
-      <a href="admin-login.html">منطقة المشرف</a>
+      <p>اكتشف السعودية جامعة الملك سعود</p>
+      <p>موقع تعريفي بسيط عن مناطق المملكة</p>
     </div>
   </footer>
-
-  <script src="js/app.js"></script>
 </body>
 </html>
