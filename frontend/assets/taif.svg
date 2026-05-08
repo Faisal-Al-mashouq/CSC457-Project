@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-label="الطائف">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5d6f3a"/>
+      <stop offset="60%" stop-color="#b75c79"/>
+      <stop offset="100%" stop-color="#e7b56d"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000" flood-opacity=".22"/>
+    </filter>
+  </defs>
+  <rect width="900" height="620" rx="48" fill="url(#g)"/>
+  <circle cx="110" cy="95" r="70" fill="#fff" opacity=".16"/>
+  <circle cx="805" cy="528" r="110" fill="#fff" opacity=".12"/>
+  <path d="M0 438 C155 360 268 510 430 420 C602 325 696 410 900 316 L900 620 L0 620 Z" fill="#fff" opacity=".18"/>
+  <g fill="#fff" opacity=".32"><circle cx="360" cy="330" r="45"/><circle cx="420" cy="300" r="45"/><circle cx="480" cy="330" r="45"/><circle cx="420" cy="370" r="45"/><circle cx="420" cy="333" r="24" opacity=".55"/></g>
+  <g filter="url(#shadow)">
+    <rect x="78" y="72" width="744" height="476" rx="42" fill="#ffffff" opacity=".12" stroke="#ffffff" stroke-opacity=".34"/>
+  </g>
+  <text x="450" y="286" text-anchor="middle" direction="rtl" unicode-bidi="bidi-override"
+        font-family="Tahoma, Arial, sans-serif" font-size="68" font-weight="900" fill="#fff">الطائف</text>
+  <text x="450" y="346" text-anchor="middle" direction="rtl" unicode-bidi="bidi-override"
+        font-family="Tahoma, Arial, sans-serif" font-size="29" fill="#fff" opacity=".86">ورود ومرتفعات</text>
+</svg>

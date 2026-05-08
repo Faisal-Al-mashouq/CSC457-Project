@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>صفحة التفاصيل | Discover Saudi Arabia</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="details">
+  <header class="site-header">
+    <nav class="navbar container" aria-label="القائمة الرئيسية">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">د</span>
+        <span>
+          <strong>Discover Saudi Arabia</strong>
+          <small>اكتشف السعودية</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="فتح القائمة">☰</button>
+
+      <div class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="regions.html">معرض المناطق</a>
+        <a class="active" href="details.html">صفحة التفاصيل</a>
+        <a href="admin-login.html">دخول المشرف</a>
+        <button class="theme-toggle" type="button">الوضع الليلي</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="detailsHero" class="details-hero">
+      <div class="container details-layout">
+        <aside class="route-ticket reveal">
+          <span class="ticket-label">بطاقة الوجهة</span>
+          <h1 id="detailsTitle">جارٍ التحميل...</h1>
+          <p id="detailsExcerpt"></p>
+          <a class="btn ghost" href="regions.html">العودة إلى المعرض</a>
+        </aside>
+
+        <article class="details-card reveal">
+          <img id="detailsImage" src="assets/hero.svg" alt="" />
+          <div class="details-meta" id="detailsMeta"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container detail-content-grid">
+      <article class="info-panel reveal">
+        <span class="eyebrow">نبذة تاريخية وثقافية</span>
+        <h2>القصة</h2>
+        <p id="detailsIntro"></p>
+        <p id="detailsHistory"></p>
+      </article>
+
+      <article class="info-panel reveal">
+        <span class="eyebrow">الثقافة المحلية</span>
+        <h2>ماذا يميزها؟</h2>
+        <p id="detailsCulture"></p>
+      </article>
+
+      <article class="info-panel landmarks-panel reveal">
+        <span class="eyebrow">معالم مهمة</span>
+        <h2>أماكن بارزة</h2>
+        <ul id="landmarksList" class="landmark-list"></ul>
+      </article>
+    </section>
+
+    <section class="container gallery-strip reveal">
+      <div class="section-heading">
+        <span class="eyebrow">صور تعريفية</span>
+        <h2>لقطات من الوجهة</h2>
+      </div>
+      <div id="detailsGallery" class="mini-gallery"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Discover Saudi Arabia – Interactive Cultural Website</p>
+      <a href="admin-login.html">منطقة المشرف</a>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

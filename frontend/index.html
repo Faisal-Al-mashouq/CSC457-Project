@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discover Saudi Arabia – Interactive Cultural Website</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <nav class="navbar container" aria-label="القائمة الرئيسية">
+      <a class="brand" href="index.html" aria-label="Discover Saudi Arabia">
+        <span class="brand-mark">د</span>
+        <span>
+          <strong>Discover Saudi Arabia</strong>
+          <small>اكتشف السعودية</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="فتح القائمة">☰</button>
+
+      <div class="nav-links">
+        <a class="active" href="index.html">الرئيسية</a>
+        <a href="regions.html">معرض المناطق</a>
+        <a href="details.html">صفحة التفاصيل</a>
+        <a href="admin-login.html">دخول المشرف</a>
+        <button class="theme-toggle" type="button" aria-label="تبديل الوضع الليلي">الوضع الليلي</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-orbit">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">مشروع تفاعلي ثقافي</span>
+          <h1>رحلة رقمية لاكتشاف مناطق المملكة وثقافتها</h1>
+          <p>
+            موقع <strong>Discover Saudi Arabia</strong> يقدم تجربة عربية تفاعلية تعرض المناطق السعودية
+            كأنها محطات في جواز سفر ثقافي، مع معلومات تاريخية، معالم بارزة، وصور تعريفية.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="regions.html">ابدأ الاستكشاف</a>
+            <a class="btn ghost" href="details.html">شاهد نموذج التفاصيل</a>
+          </div>
+        </div>
+
+        <div class="passport-card reveal" aria-label="بطاقة تعريفية عن الموقع">
+          <div class="passport-top">
+            <span>جواز ثقافي</span>
+            <span class="stamp">KSA</span>
+          </div>
+          <img src="assets/hero.svg" alt="رسم فني يرمز إلى مناطق المملكة" />
+          <div class="passport-bottom">
+            <strong>اكتشف، قارن، واحفظ انطباعك</strong>
+            <p>تصميم مختلف يعتمد على بطاقات سفر وخريطة بصرية بدلاً من layout تقليدي.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container mission-section">
+      <article class="mission-card reveal">
+        <span class="number">01</span>
+        <h2>فكرة الموقع</h2>
+        <p>
+          تعريف الزائر بالمملكة العربية السعودية من خلال محتوى منظم عن المناطق، الثقافة،
+          المعالم التاريخية، والوجهات المهمة بأسلوب بسيط وسهل التصفح.
+        </p>
+      </article>
+
+      <article class="mission-card reveal">
+        <span class="number">02</span>
+        <h2>طريقة التفاعل</h2>
+        <p>
+          يمكن للزائر استخدام البحث والتصنيف في معرض المناطق، ثم فتح صفحة تفاصيل ديناميكية
+          لكل منطقة أو معلم لمشاهدة المعلومات والصور.
+        </p>
+      </article>
+
+      <article class="mission-card reveal">
+        <span class="number">03</span>
+        <h2>لوحة المشرف</h2>
+        <p>
+          تتضمن الصفحات الإدارية تسجيل دخول، لوحة تحكم، إضافة محتوى، تحديث محتوى، وحذف
+          مع رسالة تأكيد ونتيجة واضحة بعد نجاح العملية.
+        </p>
+      </article>
+    </section>
+
+    <section class="container cultural-compass reveal">
+      <div class="section-heading">
+        <span class="eyebrow">بوصلة ثقافية</span>
+        <h2>ماذا يمكن أن يستكشف الزائر؟</h2>
+      </div>
+
+      <div class="compass-grid">
+        <div class="compass-item">
+          <span>🏛️</span>
+          <h3>تاريخ</h3>
+          <p>قصص المدن والمواقع التاريخية.</p>
+        </div>
+        <div class="compass-item">
+          <span>🌄</span>
+          <h3>طبيعة</h3>
+          <p>جبال، سواحل، وواحات متنوعة.</p>
+        </div>
+        <div class="compass-item">
+          <span>☕</span>
+          <h3>ثقافة</h3>
+          <p>ضيافة، أسواق، وفنون محلية.</p>
+        </div>
+        <div class="compass-item">
+          <span>🧭</span>
+          <h3>مسارات</h3>
+          <p>اقتراحات مبسطة لرحلة معرفية.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container spotlight-section reveal">
+      <div class="section-heading">
+        <span class="eyebrow">محطات مختارة</span>
+        <h2>نماذج من محتوى المعرض</h2>
+      </div>
+      <div id="homeSpotlight" class="spotlight-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Discover Saudi Arabia – Interactive Cultural Website</p>
+      <a href="admin-login.html">منطقة المشرف</a>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لوحة التحكم | Discover Saudi Arabia</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="dashboard" class="admin-body">
+  <header class="admin-header">
+    <nav class="container admin-nav">
+      <a class="brand" href="admin-dashboard.html">
+        <span class="brand-mark">د</span>
+        <span>
+          <strong>Discover Saudi Arabia</strong>
+          <small>لوحة المشرف</small>
+        </span>
+      </a>
+      <div class="admin-actions">
+        <a class="btn ghost small" href="index.html">عرض الموقع</a>
+        <a class="btn primary small" href="admin-add.html">إضافة محتوى</a>
+        <button class="btn danger small" type="button" data-logout>تسجيل الخروج</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="admin-main container">
+    <section class="admin-title reveal">
+      <span class="eyebrow">إدارة المحتوى</span>
+      <h1>لوحة تحكم المناطق والمعالم</h1>
+      <p>اقرأ المحتوى الحالي، حدّث السجلات، أضف محتوى جديداً، أو احذف سجلاً مع تأكيد العملية.</p>
+    </section>
+
+    <div id="flashMessage" class="message success hidden"></div>
+
+    <section class="dashboard-stats reveal" id="dashboardStats"></section>
+
+    <section class="admin-table-card reveal">
+      <div class="table-head">
+        <h2>قائمة المحتوى</h2>
+        <span id="adminCount">0 سجل</span>
+      </div>
+
+      <div class="table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>المعرف</th>
+              <th>الاسم</th>
+              <th>التصنيف</th>
+              <th>الموقع</th>
+              <th>الوصف المختصر</th>
+              <th>الإجراءات</th>
+            </tr>
+          </thead>
+          <tbody id="adminTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

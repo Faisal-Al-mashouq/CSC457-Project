@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تحديث المحتوى | Discover Saudi Arabia</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="edit" class="admin-body">
+  <header class="admin-header">
+    <nav class="container admin-nav">
+      <a class="brand" href="admin-dashboard.html">
+        <span class="brand-mark">د</span>
+        <span>
+          <strong>Discover Saudi Arabia</strong>
+          <small>تحديث المحتوى</small>
+        </span>
+      </a>
+      <div class="admin-actions">
+        <a class="btn ghost small" href="admin-dashboard.html">لوحة التحكم</a>
+        <button class="btn danger small" type="button" data-logout>تسجيل الخروج</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="admin-main container">
+    <section class="admin-title reveal">
+      <span class="eyebrow">تعديل سجل</span>
+      <h1>تحديث بيانات المحتوى</h1>
+      <p>عدّل البيانات ثم احفظ التغييرات، وستظهر رسالة نجاح في لوحة التحكم.</p>
+    </section>
+
+    <div id="editMissing" class="message error hidden">لم يتم العثور على السجل المطلوب.</div>
+
+    <form id="contentForm" class="content-form reveal" novalidate>
+      <input type="hidden" name="id" />
+
+      <div class="form-grid">
+        <label>
+          اسم المنطقة أو المعلم
+          <input name="name" type="text" />
+          <small class="field-error"></small>
+        </label>
+
+        <label>
+          التصنيف
+          <select name="category">
+            <option value="">اختر التصنيف</option>
+            <option>تاريخ</option>
+            <option>طبيعة</option>
+            <option>ثقافة</option>
+            <option>ساحل</option>
+          </select>
+          <small class="field-error"></small>
+        </label>
+
+        <label>
+          الموقع
+          <input name="city" type="text" />
+          <small class="field-error"></small>
+        </label>
+
+        <label>
+          الموسم المناسب
+          <input name="season" type="text" />
+          <small class="field-error"></small>
+        </label>
+
+        <label class="wide">
+          وصف مختصر
+          <input name="excerpt" type="text" />
+          <small class="field-error"></small>
+        </label>
+
+        <label class="wide">
+          مقدمة
+          <textarea name="intro" rows="3"></textarea>
+          <small class="field-error"></small>
+        </label>
+
+        <label class="wide">
+          معلومات تاريخية
+          <textarea name="history" rows="4"></textarea>
+          <small class="field-error"></small>
+        </label>
+
+        <label class="wide">
+          الثقافة المحلية
+          <textarea name="culture" rows="4"></textarea>
+          <small class="field-error"></small>
+        </label>
+
+        <label class="wide">
+          المعالم المهمة
+          <textarea name="landmarks" rows="3"></textarea>
+          <small class="field-error"></small>
+        </label>
+
+        <label>
+          صورة البطاقة
+          <select name="image">
+            <option value="assets/riyadh.svg">رسم الرياض</option>
+            <option value="assets/makkah.svg">رسم مكة</option>
+            <option value="assets/alula.svg">رسم العلا</option>
+            <option value="assets/jeddah.svg">رسم جدة</option>
+            <option value="assets/abha.svg">رسم أبها</option>
+            <option value="assets/taif.svg">رسم الطائف</option>
+            <option value="assets/tabuk.svg">رسم تبوك</option>
+            <option value="assets/alahsa.svg">رسم الأحساء</option>
+          </select>
+          <small class="field-error"></small>
+        </label>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn primary" type="submit">حفظ التحديث</button>
+        <a class="btn ghost" href="admin-dashboard.html">إلغاء</a>
+      </div>
+    </form>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
