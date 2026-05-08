@@ -1,5 +1,3 @@
-// اكتشف السعودية جامعة الملك سعود - JavaScript أمامي بسيط
-// هذه النسخة تستخدم localStorage فقط للعرض التجريبي.
 
 const STORAGE_KEY = "discover_saudi_items_ksu_balanced";
 const ADMIN_KEY = "discover_saudi_admin_ksu_balanced";
