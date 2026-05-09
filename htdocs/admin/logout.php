@@ -25,5 +25,6 @@ if (isset($_GET['confirm']) && $_GET['confirm'] === '1') {
 <p>هل أنت متأكد من تسجيل الخروج؟</p>
 <p class="admin-actions"><a href="dashboard.php">لا</a> <a href="logout.php?confirm=1">نعم</a></p>
 </main>
+<script src="../js/app.js" defer></script>
 </body>
 </html>

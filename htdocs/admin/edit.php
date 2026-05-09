@@ -62,6 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'image' => $pf['image'],
             'landmarks' => $landmarks,
         ]);
+        $_SESSION['flash'] = 'تم التحديث بنجاح';
         header('Location: dashboard.php');
         exit;
     }
@@ -76,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body class="admin-simple admin-form-page">
 <main class="admin-simple-inner">
-<p class="admin-nav-top"><a href="dashboard.php">لوحة</a></p>
+<p class="admin-nav-top"><a href="dashboard.php">لوحة</a> | <a href="logout.php">تسجيل الخروج</a></p>
 <h1>تعديل</h1>
 <?php foreach ($errors as $msg) : ?>
   <p class="admin-error"><?= h($msg) ?></p>
@@ -99,5 +100,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <p><button type="submit">حفظ</button></p>
 </form>
 </main>
+<script src="../js/app.js" defer></script>
 </body>
 </html>

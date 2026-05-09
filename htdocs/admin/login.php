@@ -37,6 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <p><label>كلمة المرور<br><input name="password" type="password" required /></label></p>
   <p><button type="submit">دخول</button></p>
 </form>
+<p>استخدم البيانات التالية للدخول: admin / 12345</p>
 </main>
+<script src="../js/app.js" defer></script>
 </body>
 </html>

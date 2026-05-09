@@ -131,9 +131,25 @@ function setupRegionsFilters() {
   draw();
 }
 
+function setupAdminFormValidation() {
+  document.querySelectorAll(".admin-form").forEach((form) => {
+    form.addEventListener("submit", (e) => {
+      const empty = [...form.querySelectorAll("input,textarea,select")].filter(
+        (el) => el.required && !String(el.value).trim()
+      );
+      if (empty.length) {
+        e.preventDefault();
+        alert("الرجاء إكمال جميع الحقول.");
+        empty[0].focus();
+      }
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   setupTheme();
   setupActiveNav();
   setupRandomSuggestion();
   setupRegionsFilters();
+  setupAdminFormValidation();
 });
