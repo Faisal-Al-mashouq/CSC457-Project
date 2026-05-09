@@ -33,27 +33,27 @@ CSC457-Project/
 ## Requirements
 
 - PHP 8+ with PDO MySQL
-- MySQL or MariaDB
+- MySQL
 
 ## Setup
 
-1. Create a database and configure `v1/includes/.env` with:
+1. Create a database and configure environment variables in `v1/includes/.env` with:
 
    - `HOST`, `DBNAME`, `PORT`, `USER`, `PASSWORD`
 
 2. Import the schema (creates tables and seed rows):
 
    ```bash
-   mysql -u YOUR_USER -p YOUR_DB < v1/sql/schema.sql
+   mysql -u USER -p DB < v1/sql/schema.sql
    ```
 
-3. From the repository root, serve the public folder (document root must be `v1/public`):
+3. From the repository root, start server from the public folder:
 
    ```bash
    php -S localhost:8080 -t v1/public
    ```
 
-4. Open `http://localhost:8080` in the browser. Use the theme control in the header for light/dark mode.
+4. Open `http://localhost:8080` in the browser.
 
 ## Admin (development seed)
 
