@@ -32,7 +32,7 @@ CSC457-Project/
 
 ## Requirements
 
-- PHP 8+ with PDO MySQL
+- PHP 8+
 - MySQL
 
 ## Setup
