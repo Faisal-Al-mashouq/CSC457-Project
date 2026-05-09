@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__) . '/includes/places.php';
-require_once dirname(__DIR__) . '/includes/card.php';
+require_once __DIR__ . '/includes/places.php';
+require_once __DIR__ . '/includes/card.php';
 
 $all = places_all();
 $featured = array_slice($all, 0, 3);
@@ -39,10 +39,10 @@ $activeNav = 'home';
       <div class="container hero-grid">
         <div class="hero-content">
           <span class="eyebrow">اكتشف السعودية</span>
-          <h1>تعرف على مناطق ومعالم المملكة بطريقة سهلة</h1>
+          <h1>اكتشف جمال وتنوّع المملكة العربية السعودية</h1>
           <p class="lead">
-            موقع عربي يساعد الزائر على استكشاف بعض مدن ومناطق المملكة العربية السعودية،
-            ومعرفة أهم المعالم والمعلومات الثقافية عنها بطريقة مختصرة وواضحة.
+            نسعى على جعلك تستكشف المدن والمناطق، مع لمحات عن المعالم، التاريخ،
+            ونصائح عملية لتخطيط زيارتك بسرعة.
           </p>
 
           <div class="hero-actions">
@@ -62,20 +62,20 @@ $activeNav = 'home';
     <section class="container section split-section">
       <div>
         <span class="section-label">عن الموقع</span>
-        <h2>نبذة عن الموقع</h2>
+        <h2>نبذة عننا</h2>
         <p>
-          يقدم الموقع لمحة بسيطة عن مناطق سعودية مختلفة، مع صور مختصرة ووصف ثقافي وسياحي
-          يساعد الزائر على اختيار وجهته والتعرف على أبرز المعالم.
+          موقع يقدم لمحة موجزة عن مناطق المملكة مع صور مختصرة ومعلومات ثقافية وسياحية
+          تساعدك على اختيار وجهتك بسهولة.
         </p>
       </div>
       <div class="feature-list">
         <article>
           <h3>استكشاف سريع</h3>
-          <p>تصفح الوجهات واختر ما يناسبك بسهولة.</p>
+          <p>تصفّح الوجهات واكتشف ما يهمك خلال دقائق.</p>
         </article>
         <article>
-          <h3>معلومات واضحة</h3>
-          <p>تعرف على وصف مختصر وأهم المعالم لكل وجهة.</p>
+          <h3>معلومات موثوقة</h3>
+          <p>وصف موجز لأهم المعالم والنقاط البارزة.</p>
         </article>
         <article>
           <h3>بحث وتصفية</h3>

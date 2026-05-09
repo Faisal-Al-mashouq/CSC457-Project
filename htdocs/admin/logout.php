@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__, 2) . '/includes/auth.php';
+require_once dirname(__DIR__) . '/includes/auth.php';
 
 auth_require_admin();
 
@@ -25,5 +25,6 @@ if (isset($_GET['confirm']) && $_GET['confirm'] === '1') {
 <p>هل أنت متأكد من تسجيل الخروج؟</p>
 <p class="admin-actions"><a href="dashboard.php">لا</a> <a href="logout.php?confirm=1">نعم</a></p>
 </main>
+<script src="../js/app.js" defer></script>
 </body>
 </html>

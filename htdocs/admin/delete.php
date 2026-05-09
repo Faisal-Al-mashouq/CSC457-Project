@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__, 2) . '/includes/auth.php';
-require_once dirname(__DIR__, 2) . '/includes/places.php';
+require_once dirname(__DIR__) . '/includes/auth.php';
+require_once dirname(__DIR__) . '/includes/places.php';
 
 auth_require_admin();
 
@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $postId = isset($_POST['id']) ? (int) $_POST['id'] : 0;
     if ($postId > 0 && places_get_by_id($postId)) {
         places_delete($postId);
+        $_SESSION['flash'] = 'تم الحذف بنجاح';
     }
     header('Location: dashboard.php');
     exit;
@@ -34,7 +35,7 @@ if (!$place) {
 </head>
 <body class="admin-simple">
 <main class="admin-simple-inner">
-<p class="admin-nav-top"><a href="dashboard.php">لوحة</a></p>
+<p class="admin-nav-top"><a href="dashboard.php">لوحة</a> | <a href="logout.php">تسجيل الخروج</a></p>
 <h1>حذف «<?= h((string) $place['name']) ?>»؟</h1>
 <form method="post" action="delete.php?id=<?= $id ?>" class="admin-form">
   <input type="hidden" name="id" value="<?= $id ?>" />
@@ -44,5 +45,6 @@ if (!$place) {
   </p>
 </form>
 </main>
+<script src="../js/app.js" defer></script>
 </body>
 </html>

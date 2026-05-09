@@ -441,6 +441,7 @@ body.dark .card-image .badge {
   text-underline-offset: 3px;
 }
 .admin-error { margin: 0 0 12px; color: var(--danger); font-size: 15px; }
+.admin-success { margin: 0 0 12px; color: var(--green); font-size: 15px; }
 .admin-actions a {
   color: var(--green);
   text-decoration: underline;

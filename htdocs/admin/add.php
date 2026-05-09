@@ -2,31 +2,20 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__, 2) . '/includes/auth.php';
-require_once dirname(__DIR__, 2) . '/includes/places.php';
+require_once dirname(__DIR__) . '/includes/auth.php';
+require_once dirname(__DIR__) . '/includes/places.php';
 
 auth_require_admin();
 
-$id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
-$place = $id > 0 ? places_get_by_id($id) : null;
-if (!$place) {
-    http_response_code(404);
-    echo 'غير موجود. <a href="dashboard.php">لوحة</a>';
-    exit;
-}
-
-$lms = $place['landmarks'];
-$landmarkLines = is_array($lms) ? implode("\n", array_map('strval', $lms)) : '';
-
 $errors = [];
 $pf = [
-    'name' => (string) $place['name'],
-    'region' => (string) $place['region'],
-    'category' => (string) $place['category'],
-    'short_text' => (string) $place['short_text'],
-    'description' => (string) $place['description'],
-    'image' => (string) $place['image'],
-    'landmarks' => $landmarkLines,
+    'name' => '',
+    'region' => '',
+    'category' => 'مدينة',
+    'short_text' => '',
+    'description' => '',
+    'image' => 'assets/generic.svg',
+    'landmarks' => '',
 ];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -53,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ) {
         $errors[] = 'أكمل كل الحقول.';
     } else {
-        places_update($id, [
+        places_create([
             'name' => $pf['name'],
             'region' => $pf['region'],
             'category' => $pf['category'],
@@ -62,6 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'image' => $pf['image'],
             'landmarks' => $landmarks,
         ]);
+        $_SESSION['flash'] = 'تمت الإضافة بنجاح';
         header('Location: dashboard.php');
         exit;
     }
@@ -71,17 +61,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>تعديل</title>
+  <title>إضافة</title>
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body class="admin-simple admin-form-page">
 <main class="admin-simple-inner">
-<p class="admin-nav-top"><a href="dashboard.php">لوحة</a></p>
-<h1>تعديل</h1>
+<p class="admin-nav-top"><a href="dashboard.php">لوحة</a> | <a href="logout.php">تسجيل الخروج</a></p>
+<h1>إضافة</h1>
 <?php foreach ($errors as $msg) : ?>
   <p class="admin-error"><?= h($msg) ?></p>
 <?php endforeach; ?>
-<form method="post" action="edit.php?id=<?= $id ?>" class="admin-form">
+<form method="post" action="add.php" class="admin-form">
   <p>اسم<br><input name="name" value="<?= h($pf['name']) ?>" required /></p>
   <p>منطقة<br><input name="region" value="<?= h($pf['region']) ?>" required /></p>
   <p>تصنيف<br>
@@ -94,10 +84,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </p>
   <p>نص قصير<br><textarea name="short_text" required maxlength="500"><?= h($pf['short_text']) ?></textarea></p>
   <p>وصف<br><textarea name="description" rows="5" required><?= h($pf['description']) ?></textarea></p>
-  <p>صورة<br><input name="image" value="<?= h($pf['image']) ?>" required /></p>
+  <p>صورة (مسار)<br><input name="image" value="<?= h($pf['image']) ?>" required /></p>
   <p>معالم (سطر لكل معلم)<br><textarea name="landmarks" rows="4" required><?= h($pf['landmarks']) ?></textarea></p>
   <p><button type="submit">حفظ</button></p>
 </form>
 </main>
+<script src="../js/app.js" defer></script>
 </body>
 </html>
