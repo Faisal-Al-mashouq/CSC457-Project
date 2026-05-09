@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__) . '/includes/places.php';
-require_once dirname(__DIR__) . '/includes/card.php';
+require_once __DIR__ . '/includes/places.php';
+require_once __DIR__ . '/includes/card.php';
 
 $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 $item = $id > 0 ? places_get_by_id($id) : null;

@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__) . '/includes/places.php';
-require_once dirname(__DIR__) . '/includes/card.php';
+require_once __DIR__ . '/includes/places.php';
+require_once __DIR__ . '/includes/card.php';
 
 $all = places_all();
 $featured = array_slice($all, 0, 3);

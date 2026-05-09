@@ -23,11 +23,6 @@ CREATE TABLE IF NOT EXISTS places (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
-
--- Seed users and places
---------------------------------
--- Seed users
---------------------------------
 INSERT INTO users (username, password_hash, role)
 VALUES (
   'admin',
@@ -35,11 +30,8 @@ VALUES (
   'admin'
 )
 ON DUPLICATE KEY UPDATE username = username;
--- username: admin  password: 12345 (bcrypt via PHP password_hash)
 
---------------------------------
--- Seed places
---------------------------------
+
 INSERT INTO places (name, region, category, short_text, description, image, landmarks) VALUES
 (
   'الرياض',

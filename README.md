@@ -16,19 +16,20 @@ CSC457-Project/
     │   ├── config.php   # loads includes/.env
     │   ├── db.php
     │   └── places.php
-    ├── public/          # web root (point the server here)
-    │   ├── admin/       # login, dashboard, add, edit, delete
-    │   ├── assets/      # SVG illustrations
-    │   ├── css/
-    │   │   └── style.css
-    │   ├── js/
-    │   │   └── app.js
-    │   ├── details.php
-    │   ├── index.php
-    │   └── regions.php
+    ├── admin/           # login, dashboard, add, edit, delete
+    ├── assets/          # SVG illustrations
+    ├── css/
+    │   └── style.css
+    ├── js/
+    │   └── app.js
+    ├── details.php
+    ├── index.php
+    ├── regions.php
     └── sql/
         └── schema.sql   # tables + seed data
 ```
+
+On hosts where the whole `v1/` tree is the document root, `includes/` is web-visible; `includes/.htaccess` denies direct HTTP access (Apache). Omit that file if your host does not use Apache.
 
 ## Requirements
 
@@ -47,10 +48,10 @@ CSC457-Project/
    mysql -u USER -p DB < v1/sql/schema.sql
    ```
 
-3. From the repository root, start server from the public folder:
+3. From the repository root, start the PHP server with `v1` as the document root:
 
    ```bash
-   php -S localhost:8080 -t v1/public
+   php -S localhost:8080 -t v1
    ```
 
 4. Open `http://localhost:8080` in the browser.
